@@ -1,31 +1,30 @@
-#include <iostream>
+#include<iostream>
+#include<cstring>
+#include<algorithm>
+
 using namespace std;
+const int MAX = 1001;
+bool isPrime[MAX];
+int n, m;
 
-bool checkPrime(int n, int m) { // false일 경우 소수이다.
-    bool arr[1000] = {false, };
-    arr[0] = arr[1] = true;
-    int count{0};
+void solve() {
+    memset(isPrime, true, sizeof(isPrime));
 
-    for(int i = 2; i * i <= m; i++) {
-        if(arr[i]) continue; // true일 경우 소수 아니끼 때문에, continue
+    for (int i = 2; i <= sqrt(m); i++) {
+        if (!isPrime[i])continue;
 
-        else{
-            for(int j = 2; j*i <= m; j++){
-                arr[j*i] = true;
-            }
+        for (int j = i*i; j <= m; j += i) {
+            isPrime[j] = false;
         }
     }
-    return true;
 }
 
 int main() {
-    int a,b;
-    cin >> a >> b;
-    
-    int count{0};
-        if(!checkPrime(a,b)) {
-            count += ????;
-        }
-    cout << count;
-    return 0;
+    cin >> n >> m;
+    solve();
+    int sum = 0;
+    for (int i = n; i <= m; i++) {
+        if (isPrime[i])sum += i;
+    }
+    cout << sum;
 }
