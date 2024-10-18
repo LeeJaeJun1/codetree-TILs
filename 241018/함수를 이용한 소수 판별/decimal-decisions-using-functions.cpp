@@ -1,5 +1,6 @@
 #include<iostream>
 #include<cstring>
+#include<cmath>
 #include<algorithm>
 
 using namespace std;
@@ -10,17 +11,15 @@ int n, m;
 void solve() {
     memset(isPrime, true, sizeof(isPrime));
 
-    for(int i = 2; i<=m; i++) {
-        if(isPrime[i]) {
-            for(int j = 2; j * i <= m; j++) {
-                isPrime[j*i] = false;
-            }
-        }
-        else{
-            continue;
+    for (int i = 2; i <= sqrt(m); i++) {
+        if (!isPrime[i])continue;
+
+        for (int j = i*i; j <= m; j += i) {
+            isPrime[j] = false;
         }
     }
 }
+
 int main() {
     cin >> n >> m;
     solve();
