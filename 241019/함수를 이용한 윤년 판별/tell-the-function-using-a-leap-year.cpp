@@ -2,12 +2,16 @@
 using namespace std;
 
 bool Year(int y) {
-    if (y % 4 == 0 && y % 100 ==0 || y % 400 != 0) {
+    if (y % 4 != 0)
+        return false; // 4의 배수가 아니라면 무조건 윤년이 아니다.
+    
+    if (y % 100 != 0)
+        return true; // 4의 배수이면서 100의 배수가 아니라면 무조건 윤년
+
+    if (y % 400 == 0) // 100의 배수이면서 400의 배수이면 무조건 윤년
         return true;
-    }
-    else {
-        return false;
-    }
+
+    return false; // 100의 배수이지만 400의 배수가 아니면 무조건 윤년이 아니다.
 }
 
 
