@@ -1,50 +1,44 @@
 #include<iostream>
-#include<array>
 using namespace std;
 
-// if문 사용해서 a > b, a < b 쪼갠다
-// a < b일 때 무조건 false
-// b안에 있는게 a 안에 없으면 무조건 false
-// 문제점 : 일단 여러 개의 원소를 받지 못함.
+int num1, num2;
+int A[100], B[100];
 
-bool arrStream(int a, int b) {
-    int arr1[a];
-    int arr2[b];
-
-    for(int i = 0; i < a; i++) {
-        cin >> arr1[i];
-    }
-
-    for(int j = 0; j < b; j++) {
-        cin >> arr2[j];
-    }
-
-    if(a < b){
-        return false;
-    }
-    else{
-        for(int c = 0; c<b; c++) {
-            for(int k= 0; k<a; k++) {
-                if(arr2[c] != arr1[k]) {
-                    return false;
-                }
-            }
+bool aStream(int n) { //b 원소가 모두 a원소 안에 들어있는지 확인한다.
+    for(int k = 0; k < num2; k++){
+        if(A[k+n] != B[k]) {
+            return false;
         }
     }
     return true;
 }
 
-int main() {
-    int a,b;
-    cin >> a >> b;
-    int arrA[a];
-    int arrB[b];
+bool bStream() {
+    for(int c = 0; c < num1; c++) {
+        if(aStream(c)) {
+            return true;
+        }
+    }
+    return false;
+}
 
-    if(arrStream(a,b)){
+
+
+int main() {
+    cin >> num1 >> num2;
+
+    for(int i = 0; i < num1; i++) {
+        cin >> A[i];
+    }
+
+    for(int j = 0; j < num2; j++) {
+        cin >> B[j];
+    }
+
+    if(bStream()) {
         cout << "Yes";
     }
     else{
         cout << "No";
     }
-    return 0;
 }
