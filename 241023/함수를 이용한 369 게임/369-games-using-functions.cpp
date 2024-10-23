@@ -5,9 +5,12 @@ using namespace std;
 // num / 10 == 3,6,9 and num % 10 == 3,6,9 or num % 3 == 0
 
 bool Game(int num) {
-    if((num / 10 == 3 || num / 10 == 6 || num / 10 == 9 || num % 10 == 3 || num % 10 == 6 || num % 10 == 9)
-    || num%3==0) {
-        return true;
+    while(num/10 > 0) {
+        if ((num / 10 == 3 || num / 10 == 6 || num / 10 == 9 || num % 10 == 3 || num % 10 == 6 || num % 10 == 9)
+            || num % 3 == 0) {
+            return true;
+        }
+        num /= 10;
     }
     return false;
 }
