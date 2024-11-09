@@ -2,10 +2,19 @@
 #include<algorithm>
 using namespace std;
 
+int num;
+int arr1[200];
+int arr2[200];
+
+bool equal() {
+    for(int k = 0; k < num; k++)
+        if(arr1[k] != arr2[k]) {
+            return false;
+        }
+    return true;
+}
+
 int main() {
-    int arr1[100];
-    int arr2[100];
-    int num;
     int result;
     cin >> num;
 
@@ -19,16 +28,7 @@ int main() {
     }
     sort(arr2, arr2+num);
 
-    for(int k = 0; k < num; k++) {
-        if(arr1[k] != arr2[k]) {
-            result = 0;
-        }
-        else{
-            result = 1;
-        }
-    }
-
-    if(result == 1) {
+    if(equal()) {
         cout << "Yes";
     }
     else{
