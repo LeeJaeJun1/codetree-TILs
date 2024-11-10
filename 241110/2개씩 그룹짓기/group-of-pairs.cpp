@@ -6,7 +6,7 @@ int main() {
     int n;
     int max = 0;
     cin >> n;
-    int arr1[100];
+    int arr1[2*n];
 
     for(int i = 0; i < 2 * n; i++) {
         cin >> arr1[i];
