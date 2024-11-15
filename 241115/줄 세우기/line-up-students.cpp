@@ -33,8 +33,8 @@ int main() {
    }
    sort(s1, s1+num, Cmp);
 
-   for(int j = 0; j < num; j++)
-       cout << s1[j].height << " " << s1[j].weight << " " << s1[j].number << endl;
-   
+   for(int i = 0; i < num; i++)
+       cout << s1[i].height << " " << s1[i].weight << " " << s1[i].number << endl;
+
    return 0;
 }
