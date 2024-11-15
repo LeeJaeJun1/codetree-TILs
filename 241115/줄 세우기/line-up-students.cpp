@@ -38,18 +38,3 @@ int main() {
    
    return 0;
 }
-
-int main() {
-   int num;
-   cin >> num;
-   student s1[num];
-   int he, we;
-   for(int i = 0; i <num; i++) {
-       cin >> he >> we;
-       s1[i] = student(he,we,i+1);
-   }
-   sort(s1, s1+num, Cmp);
-
-   for(int j = 0; j < num; j++)
-       cout << s1[j].height << " " << s1[j].weight << " " << s1[j].number << "\n";
-}
