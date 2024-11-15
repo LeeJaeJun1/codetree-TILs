@@ -1,5 +1,6 @@
 #include<iostream>
 #include<algorithm>
+#include<iomanip>
 using namespace std;
 
 class student {
@@ -38,10 +39,10 @@ int main() {
     sort(s1,s1+5, Cmp1);
     cout << "name" << endl;
     for(int j = 0; j < 5; j++)
-        cout << s1[j].name << " " << s1[j].height << " " << s1[j].weight << endl;
+        cout << s1[j].name << " " << s1[j].height << " " << s1[j].weight << endl << fixed << setprecision(1);
 
     sort(s1,s1+5, Cmp2);
     cout << "\n" << "height" << endl;
     for(int k = 0; k < 5; k++)
-        cout << s1[k].name << " " << s1[k].height << " " << s1[k].weight << endl;
+        cout << s1[k].name << " " << s1[k].height << " " << s1[k].weight << fixed << setprecision(1) << endl ;
 }
