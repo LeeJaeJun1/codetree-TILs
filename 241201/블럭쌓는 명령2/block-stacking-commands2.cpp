@@ -10,11 +10,9 @@ int main() {
         cin >> fi >> la;
         for(int j = fi; j <= la; j++) {
             arr1[j]++;
-        }
-    }
-    for(int k = 1; k <= N; k++) {
-        if(arr1[k] > max) {
-            max = arr1[k];
+            if(arr1[j] > max) {
+                max = arr1[j];
+            }
         }
     }
     cout << max;
