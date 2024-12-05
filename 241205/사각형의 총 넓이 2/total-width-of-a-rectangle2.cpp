@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-bool width[100][100] = {0};
+bool width[200][200] = {0};
 
 int main() {
     ios::sync_with_stdio(0);
@@ -23,4 +23,5 @@ int main() {
         }
     }
     cout << total;
+    return 0;
 }
