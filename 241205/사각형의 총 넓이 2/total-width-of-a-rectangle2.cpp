@@ -4,7 +4,7 @@ using namespace std;
 bool width[100][100] = {0};
 
 int main() {
-    ios::sync_with_stdio(false);
+    ios::sync_with_stdio(0);
     cin.tie(0);
     int x1,x2,y1,y2,n;
     int total = 0;
