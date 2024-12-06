@@ -8,6 +8,7 @@ int main() {
     cin >> N;
     for(int i = 0; i < N; i++ ) {
         cin >> a >> b;
+        a+=100; b+=100;
         for(int j = a; j < a + 8; j++) {
             for(int k = b; k < b + 8; k++) {
                 if(arr1[j][k]) {
