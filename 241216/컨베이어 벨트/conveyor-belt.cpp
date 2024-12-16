@@ -4,7 +4,7 @@ using namespace std;
 int main() {
     int n,t;
     cin >> n >> t;
-    int arr1[100] = {}; int arr2[100] = {};
+    int arr1[1000] = {}; int arr2[1000] = {};
 
     for(int i = 0; i < n; i++) {
         cin >> arr1[i];
