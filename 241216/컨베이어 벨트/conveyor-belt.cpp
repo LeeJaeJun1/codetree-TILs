@@ -17,7 +17,7 @@ int main() {
         int temp1 = arr2[n-1];
         int temp2 = arr1[n-1];
 
-        for(int a = n+1; a>=1; a--) {
+        for(int a = n-1; a>=1; a--) {
             arr1[a] = arr1[a-1];
             arr2[a] = arr2[a-1];
         }
